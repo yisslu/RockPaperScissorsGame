@@ -1,24 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zqe-en-CNr">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rock Paper Scissors-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConfigurationGameViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="i3j-ZU-Vtk">
+                                <rect key="frame" x="0.0" y="131.66666666666663" width="393" height="589"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vG-bv-poP">
+                                        <rect key="frame" x="78.666666666666671" y="0.0" width="235.66666666666663" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="configurationValuesGame:" destination="BYZ-38-t0r" eventType="editingChanged" id="yKp-Vh-ocm"/>
+                                            <action selector="userNameGame:" destination="BYZ-38-t0r" eventType="editingChanged" id="xK3-y1-avn"/>
+                                        </connections>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Exu-TO-hZO">
+                                        <rect key="frame" x="131" y="173.00000000000003" width="131" height="71"/>
+                                        <segments>
+                                            <segment title="Points"/>
+                                            <segment title="Rounds"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="selectGameMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="wuQ-ZY-xHy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z77-v2-vjQ">
+                                        <rect key="frame" x="32" y="346" width="329" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="LYc-SY-C56">
+                                                <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="68.333333333333329"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="uHj-G6-NrP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65.333333333333329" height="68.333333333333329"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ml5-au-5tM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="65.333333333333329" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="configurationValuesGame:" destination="BYZ-38-t0r" eventType="editingChanged" id="x3f-eb-j5Q"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Win Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-59-MS1">
+                                                                <rect key="frame" x="0.0" y="47.999999999999943" width="65.333333333333329" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bFr-Kz-ds2">
+                                                        <rect key="frame" x="107.33333333333334" y="0.0" width="65" height="68.333333333333329"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBn-mv-dyv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="35"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="configurationValuesGame:" destination="BYZ-38-t0r" eventType="editingChanged" id="7hQ-3p-G0x"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Lost Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oq-QS-Zwh">
+                                                                <rect key="frame" x="0.0" y="47.999999999999943" width="65" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uld-Na-qZ5">
+                                                        <rect key="frame" x="214.33333333333334" y="0.0" width="65.333333333333343" height="68.333333333333329"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgP-xe-M5q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="65.333333333333329" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="configurationValuesGame:" destination="BYZ-38-t0r" eventType="editingChanged" id="g2T-bp-Y4w"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Score for win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-QO-1uR">
+                                                                <rect key="frame" x="0.0" y="47.999999999999943" width="65.333333333333329" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="1N0-CA-RzP">
+                                                <rect key="frame" x="287.66666666666669" y="0.0" width="41.333333333333314" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-fy-ykv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="16.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QdM-5E-UXe">
+                                                        <rect key="frame" x="-2" y="53.333333333333314" width="45.333333333333336" height="17.666666666666671"/>
+                                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                        <connections>
+                                                            <action selector="selectNumberOfRounds:" destination="BYZ-38-t0r" eventType="valueChanged" id="KGm-Tl-FQG"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Nv8-aQ-cn7"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9E-60-kQT">
+                                        <rect key="frame" x="137.66666666666666" y="519" width="117.66666666666666" height="70"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start" cornerStyle="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nTR-7e-e4k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="z77-v2-vjQ" secondAttribute="trailing" constant="32" id="EPf-Po-CLN"/>
+                                    <constraint firstItem="4vG-bv-poP" firstAttribute="width" secondItem="i3j-ZU-Vtk" secondAttribute="width" multiplier="0.6" id="Nsi-e5-srt"/>
+                                    <constraint firstItem="C9E-60-kQT" firstAttribute="width" secondItem="i3j-ZU-Vtk" secondAttribute="width" multiplier="0.3" id="f4T-jR-fR4"/>
+                                    <constraint firstItem="z77-v2-vjQ" firstAttribute="leading" secondItem="i3j-ZU-Vtk" secondAttribute="leading" constant="32" id="lwf-SC-HC5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i3j-ZU-Vtk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TdF-dd-Qwa"/>
+                            <constraint firstItem="i3j-ZU-Vtk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dvY-Wf-CnN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i3j-ZU-Vtk" secondAttribute="trailing" id="oXY-ig-edz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Rock Paper Scissors" id="nB8-MB-LLt">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="kbT-aL-HYz">
+                            <connections>
+                                <action selector="infoTextButton:" destination="BYZ-38-t0r" id="6ZF-cM-HHt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="C9E-60-kQT" id="R5l-Eu-ZPS"/>
+                        <outlet property="labelNumberOfRounds" destination="nN2-fy-ykv" id="ALJ-iC-4Uf"/>
+                        <outlet property="pointsIfLose" destination="rBn-mv-dyv" id="pfQ-Sm-ix0"/>
+                        <outlet property="pointsIfWin" destination="Ml5-au-5tM" id="cXH-oy-QUg"/>
+                        <outlet property="scoreNeedToWin" destination="pgP-xe-M5q" id="LLl-zC-1Tq"/>
+                        <outlet property="segmentGameMode" destination="Exu-TO-hZO" id="Rsl-Md-Bre"/>
+                        <outlet property="sliderRounds" destination="QdM-5E-UXe" id="aLp-m4-Ghz"/>
+                        <outlet property="stackPoitnsGame" destination="LYc-SY-C56" id="aQg-fX-PaR"/>
+                        <outlet property="stackRoundsGame" destination="1N0-CA-RzP" id="MXe-MR-ASE"/>
+                        <outlet property="userName" destination="4vG-bv-poP" id="dNQ-V6-0XY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9QZ-hI-Mgg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zqe-en-CNr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dCt-wE-nue">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wBg-Ha-6LF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LI-7e-neO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
